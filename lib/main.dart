@@ -47,40 +47,69 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        onTap: (int index) {
+      bottomNavigationBar: NavigationBar(
+        elevation: 2.0,
+        selectedIndex: currentIndex,
+        indicatorColor: const Color(0xFFB94D59).withOpacity(0.6),
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
+        onDestinationSelected: (int index) {
           setState(() {
             currentIndex = index;
           });
         },
-        selectedItemColor: Color(0xFFB94D59),
-        showSelectedLabels: true,
-        showUnselectedLabels: false,
-        currentIndex: currentIndex,
-        items: const [
-          BottomNavigationBarItem(
+        destinations: const [
+          NavigationDestination(
             icon: Icon(Icons.home_outlined),
             label: 'Home',
+            // selectedIcon: Icon(
+            //   Icons.home_outlined,
+            //   color: Colors.white,
+            // ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart_outlined),
-            label: 'Charts',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.shopping_bag_outlined),
-            label: 'Shop',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bookmark_outline),
-            label: 'Bookmark',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outlined),
-            label: 'User',
-          ),
+          NavigationDestination(
+              icon: Icon(Icons.bar_chart_outlined), label: 'Charts'),
+          NavigationDestination(
+              icon: Icon(Icons.shopping_bag_outlined), label: 'Shop'),
+          NavigationDestination(
+              icon: Icon(Icons.bookmark_outline), label: 'Bookmark'),
+          NavigationDestination(
+              icon: Icon(Icons.person_2_outlined), label: 'User'),
         ],
       ),
+      // bottomNavigationBar: BottomNavigationBar(
+      //   type: BottomNavigationBarType.fixed,
+      //   onTap: (int index) {
+      //     setState(() {
+      //       currentIndex = index;
+      //     });
+      //   },
+      //   selectedItemColor: Color(0xFFB94D59),
+      //   showSelectedLabels: true,
+      //   showUnselectedLabels: false,
+      //   currentIndex: currentIndex,
+      //   items: const [
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.home_outlined),
+      //       label: 'Home',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.bar_chart_outlined),
+      //       label: 'Charts',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.shopping_bag_outlined),
+      //       label: 'Shop',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.bookmark_outline),
+      //       label: 'Bookmark',
+      //     ),
+      //     BottomNavigationBarItem(
+      //       icon: Icon(Icons.person_outlined),
+      //       label: 'User',
+      //     ),
+      //   ],
+      // ),
       body: screens[currentIndex],
     );
   }
