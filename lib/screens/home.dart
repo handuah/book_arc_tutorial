@@ -34,19 +34,44 @@ class _HomeState extends State<Home> {
               height: 20.0,
             ),
 
-            // Container
-            Container(
-              height: 200.0,
-              decoration: BoxDecoration(
-                color: Colors.red,
-                borderRadius: BorderRadius.circular(20.0),
-                image: const DecorationImage(
-                  image: NetworkImage(
-                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1k13X3e1YtvU9qu2z14nBhPQPQTKrtl4CAQ&s',
+            // Stack
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                // First Child
+                Container(
+                  height: 200.0,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(20.0),
+                    image: const DecorationImage(
+                      image: NetworkImage(
+                        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1k13X3e1YtvU9qu2z14nBhPQPQTKrtl4CAQ&s',
+                      ),
+                      fit: BoxFit.cover,
+                      // colorFilter: ColorFilter.mode(Color.fromARGB(164, 155, 39, 176), BlendMode.color),
+                    ),
                   ),
-                  fit: BoxFit.cover,
                 ),
-              ),
+
+                // Second Child
+                Container(
+                  height: 200.0,
+                  decoration: BoxDecoration(
+                    color: Colors.black.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+
+                // Third Child
+                const Text(
+                  'The best book about selflove',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.0,
+                  ),
+                ),
+              ],
             ),
 
             // Space
@@ -80,19 +105,44 @@ class _HomeState extends State<Home> {
                 padding: EdgeInsets.all(8.0),
                 scrollDirection: Axis.horizontal,
                 children: [
-                  Container(
-                    height: 100.0,
-                    width: 100.0,
-                    decoration: BoxDecoration(
-                      color: Colors.purple,
-                      borderRadius: BorderRadius.circular(5.0),
-                      image: const DecorationImage(
-                        image: NetworkImage(
-                          'https://www.southernliving.com/thmb/PnNtH0SZmDrtF-jN0aPtGHou23E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1328567171-e0cc3a2143094e0fb46f7432115b202d.jpg',
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        // height: 100.0,
+                        width: 150.0,
+                        decoration: BoxDecoration(
+                          color: Colors.purple,
+                          borderRadius: BorderRadius.circular(5.0),
+                          image: const DecorationImage(
+                            image: NetworkImage(
+                              'https://www.southernliving.com/thmb/PnNtH0SZmDrtF-jN0aPtGHou23E=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1328567171-e0cc3a2143094e0fb46f7432115b202d.jpg',
+                            ),
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                        fit: BoxFit.cover,
                       ),
-                    ),
+                      Container(
+                        // height: 100.0,
+                        width: 150.0,
+                        decoration: BoxDecoration(
+                          color: Colors.purple.withOpacity(0.8),
+                          borderRadius: BorderRadius.circular(5.0),
+                        ),
+                      ),
+                      Container(
+                        // height: 100.0,
+                        width: 120.0,
+                        child: const Text(
+                          'Best Book for autumn reading',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.0,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   // Space
                   const SizedBox(
@@ -100,7 +150,7 @@ class _HomeState extends State<Home> {
                   ),
                   Container(
                     height: 100.0,
-                    width: 100.0,
+                    width: 150.0,
                     decoration: BoxDecoration(
                       color: Colors.purple,
                       borderRadius: BorderRadius.circular(5.0),
@@ -118,7 +168,7 @@ class _HomeState extends State<Home> {
                   ),
                   Container(
                     height: 100.0,
-                    width: 100.0,
+                    width: 150.0,
                     decoration: BoxDecoration(
                       color: Colors.purple,
                       borderRadius: BorderRadius.circular(5.0),
